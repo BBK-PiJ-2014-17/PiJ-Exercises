@@ -1,0 +1,25 @@
+// Number Pyramid
+
+String str;
+int i, j=0, k=0;
+
+println("Welcome to the Number Pyramid");
+print("How many numbers are in the pyramid? Enter a positive number here: ");
+str = System.console().readLine();
+i = Integer.parseInt(str);
+
+while (j < i) {
+
+	j++;
+	
+	while (k < j) {
+	
+		k++;
+		print(j);
+	
+	}
+
+	println();
+	k = 0;
+	
+}

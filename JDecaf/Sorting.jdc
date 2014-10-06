@@ -1,0 +1,46 @@
+// Sort 3 numbers
+
+int x, y, z;
+int low, mid, high, temp;
+String str;
+
+println("Enter 3 numbers to be sorted.");
+print("1: ");
+str = System.console().readLine();
+x = Integer.parseInt(str);
+print("2: ");
+str = System.console().readLine();
+y = Integer.parseInt(str);
+print("3: ");
+str = System.console().readLine();
+z = Integer.parseInt(str);
+
+low = x;
+mid = y;
+high = z;
+
+// first 2 places
+
+if (low > mid) {
+    temp = low;
+    low = mid;
+    mid = temp;
+}
+
+// second 2 places
+
+if (mid > high) {
+    temp = mid;
+    mid = high;
+    high = temp;
+}
+
+// first 2 places
+
+if (low > mid) {
+    temp = low;
+    low = mid;
+    mid = temp;
+}
+
+println(low + " " + mid + " " + high);

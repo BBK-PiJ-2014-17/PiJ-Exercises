@@ -1,0 +1,20 @@
+// Multiply two integers without using the multiplication
+// operator
+
+int i = 0, x, y, z = 0;
+String str;
+
+println("Enter two numbers.");
+print("1: ");
+str = System.console().readLine();
+x = Integer.parseInt(str);
+print("2: ");
+str = System.console().readLine();
+y = Integer.parseInt(str);
+
+while (i < x) {
+    i++;
+    z += y;
+}
+
+println("The product of " + x + " and " + y + " is " + z);

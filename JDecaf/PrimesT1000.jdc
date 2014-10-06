@@ -1,0 +1,30 @@
+// output the first 1000 primes
+
+boolean prime = true;
+int i = 4, j = 1, count = 2; // start at 4/2 to account for first 2 primes output before the main loop
+
+println("2");
+println("3");
+
+while (count < 1000) {
+	
+	j = 1;
+    
+    while (j < i/2) {
+        j++;
+    	if (i % j == 0) {
+    	    prime = false;
+    	}
+    }
+    
+    if (prime) {
+        println(i);
+		count++;
+    } else {
+        //pass
+    }
+	
+	prime = true;
+	i++;
+
+}

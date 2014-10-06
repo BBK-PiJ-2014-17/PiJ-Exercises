@@ -1,0 +1,20 @@
+// Find the largest of a sequences of numbers
+
+int i = 0, j = 0, max = 0;
+String str;
+
+println("Enter a sequences of numbers terminated by a -1.");
+
+while (i != -1) {
+
+    j++;
+    
+    print(j + ": ");
+    str = System.console().readLine();
+    i = Integer.parseInt(str);
+    
+    max = (max < i) ? i : max;
+
+}
+
+println("The largest number was: " + max);
