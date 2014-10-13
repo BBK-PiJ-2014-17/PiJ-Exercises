@@ -1,0 +1,49 @@
+// Calculator
+
+double x, y, z;
+String str;
+
+println("Please enter two numbers (doubles) on which to perform a");
+println("selected operation.");
+
+print("1st Number:");
+str = System.console().readLine();
+x = Double.parseDouble(str);
+
+print("2nd Number:");
+str = System.console().readLine();
+y = Double.parseDouble(str);
+
+println();
+println("-- Operations menu --");
+println("1: Addition.");
+println("2: Subtraction.");
+println("3: Multiplication.");
+println("4: Division.");
+println();
+
+print("Please choose your operation:");
+str = System.console().readLine();
+
+switch (str) {
+	case "1":	println("Addition");
+				z = x + y;
+				println("The result of " + x + " plus " + y + " is " + z);
+				break;
+	case "2":	println("Subtraction");
+				z = x - y;
+				println("The result of " + x + " minus " + y + " is " + z);
+				break;
+	case "3":	println("Multiplication");
+				z = x * y;
+				println("The result of " + x + " times " + y + " is " + z);
+				break;
+	case "4":	println("Division");
+				z = (y==0) ? 0.0 : x / y;
+				println("The result of " + x + " divided by " + y + " is " + z);
+				break;
+	default:	println("Non-valid selection");
+				break;
+}
+
+

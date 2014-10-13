@@ -1,4 +1,5 @@
 // Calculate Pi using series approximation
+// Request number of iterations
 
 int k, n; // n = number of terms
 double s = 0.0; // s = summation
