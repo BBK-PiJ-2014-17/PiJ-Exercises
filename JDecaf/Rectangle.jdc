@@ -1,0 +1,55 @@
+// Compute the area of a rectangle based on two points
+
+String str;
+double width, height, peri, area;
+
+Point one = new Point();
+Point two = new Point();
+
+println("Please enter three coordinates");
+print("First coordinate X: ");
+str = System.console().readLine();
+one.x = Double.parseDouble(str);
+
+print("First coordinate Y: ");
+str = System.console().readLine();
+one.y = Double.parseDouble(str);
+
+print("Second coordinate X: ");
+str = System.console().readLine();
+two.x = Double.parseDouble(str);
+
+print("Second coordinate Y: ");
+str = System.console().readLine();
+two.y = Double.parseDouble(str);
+
+Rect r = new Rect();
+r.upLeft = one;
+r.downRight = two;
+
+width = (r.downRight.x - r.upLeft.x);
+height = (r.upLeft.y - r.downRight.y);
+
+println();
+
+// Perimeter
+
+peri = (2.0 * width) + (2.0 * height);
+println("Rectangle perimeter: " + peri);
+
+// Area
+
+area = width * height;
+println("Rectangle area: " + area);
+
+// classes
+
+class Point {
+	double x;
+	double y;
+}
+
+class Rect {
+	Point upLeft;
+	Point downRight;
+}

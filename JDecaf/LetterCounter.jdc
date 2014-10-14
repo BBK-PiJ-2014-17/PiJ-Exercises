@@ -1,0 +1,26 @@
+// count the chosen letter in the input string.
+
+String str;
+char countToken;
+int len, i = 0, count = 0;
+boolean b = true;
+
+print("Please enter an input string: ");
+str = System.console().readLine();
+print("Please select a letter to count in this sentence: ");
+countToken = System.console().readLine().charAt(0);
+
+for (i = 0 ; i < str.length() ; i++) {
+
+	char c = str.charAt(i);
+	
+	if (c == countToken) {
+	
+		count++;
+	
+	}
+
+}
+
+println("There are " + count + " " + countToken + "'s in");
+println("\"" + str + "\"");
