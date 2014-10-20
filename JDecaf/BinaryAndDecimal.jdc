@@ -1,0 +1,70 @@
+// Binary to Decimal
+
+// include fractional part?
+
+String str, b;
+double d;
+
+println("Command List:");
+println("1.\t- Binary to Decimal");
+println("2.\t- Decimal to Binary");
+print(">> ");
+str = System.console().readLine();
+
+switch (str) {
+	case "1": 	println("Enter Binary number");
+				print(">> ");
+				str = System.console().readLine();
+				println("Decimal: " + binary2decimal(str));
+				break;
+				
+	case "2": 	println("Enter Decimal number");
+				print(">> ");
+				str = System.console().readLine();
+				d = Double.parseDouble(str);
+				println("Binary: " + decimal2binary(d));
+				break;
+				
+	default:	println("Non-valid selection");
+				break;
+}
+
+double binary2decimal(String b) {
+	
+	int power = 0, count = b.length() - 1;
+	double d = 0.0;
+	
+	for (int i = count; i >= 0 ; i--) {
+		
+		d += (Character.getNumericValue(b.charAt(i)) * Math.pow(2,power));
+		power++;
+	}
+
+	return d;
+}
+
+static String decimal2binary(double d) {
+	
+	String s = "";
+	int i = (int)d, r;
+	
+	// integer part
+	
+	while (i > 0) {
+	
+		r = i % 2;
+		if (r == 1) i--;
+		i = i / 2;
+		s = r + s;
+	
+	}
+	
+	// decimal part
+	
+	return s;
+	
+}	
+	
+	
+	
+

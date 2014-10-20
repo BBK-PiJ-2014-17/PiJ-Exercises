@@ -1,0 +1,45 @@
+// Mortgate Calculator
+
+double b, y, t, a, r;
+String str;
+
+println("Please enter the details of your mortgage");
+print("Amount borrowed: ");
+str = System.console().readLine();
+b = Double.parseDouble(str);
+println();
+
+print("Years Remaining: ");
+str = System.console().readLine();
+y = Double.parseDouble(str);
+println();
+
+print("Interest Rate: ");
+str = System.console().readLine();
+r = Double.parseDouble(str);
+println();
+
+t = calculateTotalAmount(b, r);
+a = calculateAnnualPayment(t, y);
+
+println("Total Amount paid: " + t);
+println("Annual Payment: " + a);
+println("Number of years before interest paid: " + calculateYearsBeforeInterestPaid(r * b, a));
+
+double calculateTotalAmount(double cost, double rate) {
+
+	return cost * (1 + rate / 100);
+
+}
+
+double calculateAnnualPayment(double total, double years) {
+
+	return total / years;
+
+}
+
+double calculateYearsBeforeInterestPaid(double interest, double annualPayment) {
+
+	return interest / annualPayment;
+
+}
