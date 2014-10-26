@@ -1,0 +1,76 @@
+// Day 3 - Exercise 13
+// Compute the area of a rectangle based on two points
+
+// variables
+
+String str;
+double width, height, peri, area;
+Point one = new Point();
+Point two = new Point();
+
+// Intro and user input request
+
+println("***\tDay 3, Exercise 13 \t\t***");
+println("***\tRECTANGLE	\t\t***");
+println();
+println("This program will read in the upper left coordinate and the bottom");
+println("right coordinate, and calculate the area of a rectangle");
+println("constructed using these coordinates. Please enter the points using");
+println("the prompts below.");
+println();
+
+print("Upper left X: ");
+str = System.console().readLine();	//	receive user input 1
+one.x = Double.parseDouble(str);
+
+print("Upper left Y: ");
+str = System.console().readLine();	//	receive user input 1
+one.y = Double.parseDouble(str);
+
+print("Lower right X: ");
+str = System.console().readLine();	//	receive user input 2
+two.x = Double.parseDouble(str);
+
+print("Lower right Y: ");
+str = System.console().readLine();	//	receive user input 2
+two.y = Double.parseDouble(str);
+
+// construct rectangle
+
+Rect r = new Rect();
+r.upLeft = one;
+r.downRight = two;
+
+// calculate width and height
+
+width = (r.downRight.x - r.upLeft.x);
+height = (r.upLeft.y - r.downRight.y);
+
+// display results
+
+println();
+
+// Perimeter
+
+peri = (2.0 * width) + (2.0 * height);
+println("Rectangle perimeter: " + peri);
+
+// Area
+
+area = width * height;
+println("Rectangle area: " + area);
+
+println();
+println("End of Program");
+
+// classes
+
+class Point {
+	double x;
+	double y;
+}
+
+class Rect {
+	Point upLeft;
+	Point downRight;
+}

@@ -1,2 +1,17 @@
 Exercise 1	-	Calculator.jdc
 Exercise 2	-	CLCalculator.jdc
+Exercise 3	-	Change.jdc
+Exercise 4	-	LineToCol.jdc
+		-	LineToColWord.jdc
+Exercise 5	-	LetterCounter.jdc
+Exercise 6	-				[NOT DONE]
+Exercise 7	-				[NOT DONE]
+Exercise 8	-	Palindrome.jdc
+Exercise 9	-	PalindromeWriter.jdc
+Exercise 10	-	PalindromeRelaxed.jdc
+Exercise 11	-				[NOT DONE]
+Exercise 12	-	DistanceP2P.jdc
+Exercise 13	-	Rectangle.jdc
+Exercise 14	-	InsideOut.jdc
+Exercise 15	-				[NOT DONE]
+Exercise 16	-	JavaMailServer.java	[INCOMPLETE]

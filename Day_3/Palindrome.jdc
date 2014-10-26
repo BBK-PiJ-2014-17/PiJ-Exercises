@@ -1,0 +1,49 @@
+// Day 3 - Exercise 8
+// Detect a palindrome!
+// Loop from either end of a string and compare letters
+
+// variables
+
+String str;
+int strLength, j;
+boolean palindrome = true;	// assume is palindrome, find contradiction.
+
+// Intro and user input request
+
+println("***\tDay 3, Exercise 8 \t\t***");
+println("***\tPALINDROME	\t\t***");
+println();
+println("This program will read in a string and test to see if");
+println("it is a palindrome. Please enter a string at the");
+println("prompt below.");
+println();
+print(">> ");
+str = System.console().readLine();	// receive user input
+
+strLength = str.length();	// get string length
+j = strLength-1;	//	end index for string characters
+
+for (int i = 0 ; i < (int)(strLength / 2) ; i++) {	// loop to middle of string
+	
+	j = (strLength - 1) - i;	//	move towards middle from end of string
+		
+	if (str.charAt(i) == str.charAt(j)) {
+		//pass
+	} else {
+		palindrome = false;	//	not a palindrome
+	}
+	
+}
+
+// display results
+println();
+if (palindrome) {
+	println("'" + str + "' is a palindrome.");
+} else {
+	println("'" + str + "' is NOT a palindrome.");
+}
+
+println();
+println("End of Program");
+
+
