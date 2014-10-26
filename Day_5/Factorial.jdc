@@ -1,0 +1,77 @@
+// Day 5 - Exercise 2.1a
+// Factorial
+
+// variables
+
+String str;
+
+// Intro and user input request
+
+println("***\tDay 5, Exercise 2.1a \t***");
+println("***\tFACTORIAL \t\t***");
+println();
+println("This program will calculate the factorial of a given number");
+println("either iteratively or recursively, depending on the choice made.");
+println("Please choose a command from below.");
+
+// command options
+
+println("Command List:");
+println("1.\t- Iteratively");
+println("2.\t- Recursively");
+println();
+print(">> ");
+str = System.console().readLine();	// receive user input for command
+
+// switch on input
+
+switch (str) {
+	case "1": 	println("Enter number");
+				print(">> ");
+				str = System.console().readLine();
+				println("Factorial using iteration: " + factorialIteration(Integer.parseInt(str)));
+				break;
+				
+	case "2": 	println("Enter number");
+				print(">> ");
+				str = System.console().readLine();
+				println("Factorial using recursion: " + factorialRecursion(Integer.parseInt(str)));
+				break;
+				
+	default:	println("Invalid selection");
+				break;
+}
+
+println();
+println("End of Program");
+
+// methods
+
+int factorialIteration(int n) {
+
+	int tempSum = n;	// set first value
+	
+	for (int i = 1 ; i < n ; i++) {
+	
+		println(i + " , " + n);
+		tempSum = tempSum * (n-i);	//	multiply by previous number and store product
+		println(tempSum);
+		
+	}
+
+	return tempSum;
+	
+}
+
+int factorialRecursion(int n) {
+	
+	int result;
+	
+	if (n == 1) {
+		return 1;
+	} else {
+		result = n * factorialRecursion(n-1);	//	recursive call to factorial
+		return result;
+	}
+
+}
