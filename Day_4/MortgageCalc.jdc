@@ -1,0 +1,64 @@
+// Day 4 - Exercise 3
+// Mortgage Calculator
+
+// variables
+
+double b, y, t, a, r;
+String str;
+
+// Intro and user input request
+
+println("***\tDay 4, Exercise 3 \t\t\t***");
+println("***\tA BIT MORE PRACTICE WITH DOUBLES \t***");
+println();
+println("This program will calculate the total payment, annual payment");
+println("and number of years to pay off interest, for a mortgage with");
+println("given values, using methods. Please enter details of the");
+println("mortgage at the prompt below.");
+println();
+print("Amount borrowed: ");
+str = System.console().readLine();	//	receive user input
+b = Double.parseDouble(str);
+println();
+
+print("Years Remaining: ");
+str = System.console().readLine();	//	receive user input
+y = Double.parseDouble(str);
+println();
+
+print("Interest Rate: ");
+str = System.console().readLine();	//	receive user input
+r = Double.parseDouble(str);
+println();
+
+t = calculateTotalAmount(b, r);	//	get total amount
+a = calculateAnnualPayment(t, y);	//	get annual payment
+
+// display results
+
+println("Total Amount paid: " + t);
+println("Annual Payment: " + a);
+println("Number of years before interest paid: " + calculateYearsBeforeInterestPaid((r/100) * b, a));
+
+println();
+println("End of Program");
+
+// methods
+
+double calculateTotalAmount(double cost, double rate) {
+
+	return cost * (1 + rate / 100);
+
+}
+
+double calculateAnnualPayment(double total, double years) {
+
+	return total / years;
+
+}
+
+double calculateYearsBeforeInterestPaid(double interest, double annualPayment) {
+
+	return interest / annualPayment;
+
+}

@@ -1,0 +1,5 @@
+Exercise 3	-	MortgageCalc.jdc
+Exercise 4	-	BinaryAndDecimal.jdc
+Exercise 5	-	BinaryAndDecimalAndHex.jdc	[INCOMPLETE]
+Exercise 6	-					[NOT DONE]
+Exercise 7	-					[NOT DONE]
