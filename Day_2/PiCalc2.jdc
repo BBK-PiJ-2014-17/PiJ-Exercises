@@ -1,0 +1,52 @@
+// Day 2 - Exercise 18
+// Calculate Pi using series approximation
+// Calculate number of terms required for
+// a. 3.14
+// b. 3.14159265358
+
+// variables
+
+int k = 0, n; // n = number of terms
+double s = 0.0, delta = 1000.0; // s = summation
+boolean b = true;
+String str, sstr;
+
+// Intro and user input request
+
+println("***\tDay 2, Exercise 18 \t\t***");
+println("***\tPI	\t\t\t***");
+println();
+println("This program will approximate pi using series approximation.");
+println("First it will output the number of terms required to get an");
+println("accuracy of 2dp. Then, it will out the number of terms required");
+println("to get an accuracy of 10dp.");
+println("Press and key to continue...");
+System.console().readLine();
+println();
+
+while (b) {
+
+    s += (Math.pow((double)-1,(double)k) / ((2 * (double)k) + 1));
+	
+	//delta = Math.abs(3.14 - (4 * s));
+	
+	//println("Counter: " + k);
+	//println("Term: " + (Math.pow((double)-1,(double)k) / ((2 * (double)k) + 1)));
+	//println("Sum: " + 4 * s);
+	//println("Diff: " + delta);
+	
+	str = "" + 4 * s + "0000000000";
+	sstr = str.substring(0,12);
+	
+	//println(sstr);
+	
+	b = (sstr.equals("3.14")) ? false : true;
+	//b = (sstr.equals("3.1414159265")) ? false : true;
+	
+	k++;
+
+	//System.console().readLine();
+	
+}
+
+println("Pi Approximated: " + 4 * s + " in " + k + " many steps.");

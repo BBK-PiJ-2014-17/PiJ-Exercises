@@ -1,0 +1,8 @@
+Exercise 12	-	Pyramids.jdc
+Exercise 13	-	PrimesT1000.jdc
+Exercise 14	-	PrimesT1000.jdc
+Exercise 15	-			[NOT DONE]
+Exercise 16	-			[NOT DONE]
+Exercise 17	-			[NOT DONE]
+Exercise 18	-	PiCalc.jdc
+		-	PiCalc2.jdc	[INCOMPLETE]

@@ -1,0 +1,42 @@
+// Day 2 - Exercise 12
+// Print a number pyramid
+
+// variables
+
+String str;
+int i, j=0, k=0;
+
+// Intro and user input request
+
+println("***\tDay 2, Exercise 12 \t\t***");
+println("***\tNUMBER PYRAMIDS	\t\t***");
+println();
+println("This program will display a pyramid of numbers up to");
+println("the number entered at the prompt below.");
+println();
+print(">> ");
+str = System.console().readLine(); // receive user input
+i = Integer.parseInt(str);
+
+// loop while number less than input
+
+while (j < i) {
+
+	j++;
+	
+	// for each number, loop to print copies of that number
+	
+	while (k < j) {
+	
+		k++;
+		print(j);
+	
+	}
+
+	println();
+	k = 0;
+	
+}
+
+println();
+println("End of Program");
