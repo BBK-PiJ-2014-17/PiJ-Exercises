@@ -1,0 +1,35 @@
+// Day 3 - Exercise 4
+// Read input string and write as column of letters
+
+// variables
+
+String str;
+int len, i = 0;
+
+// Intro and user input request
+
+println("***\tDay 3, Exercise 4 \t\t***");
+println("***\tLINE TO COLUMN	\t\t***");
+println();
+println("This program will read in some text and then display");
+println("the text as a column of letters. Please enter an");
+println("input string at the prompt below.");
+print(">> ");
+str = System.console().readLine();	//	receive user input
+
+len = str.length();	//	get text length
+
+// main loop
+
+while (len > i) {	//	while there are letters to print
+	
+	// use substring() to get current letter and display
+	
+	println(str.substring(len - (len - i), len - (len - i - 1)));
+
+	i++;
+	
+}
+
+println();
+println("End of Program");

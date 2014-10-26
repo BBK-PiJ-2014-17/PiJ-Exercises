@@ -1,0 +1,77 @@
+// Day 3 - Exercise 2
+// Command-Line Calculator
+
+// variables
+
+int idx = -1;
+double x = 0.0, y = 0.0, z = 0.0;
+String input, op = "";
+
+// Intro and user input request
+
+println("***\tDay 3, Exercise 2 \t\t***");
+println("***\tCOMMAND-LINE CALCULATOR	\t***");
+println();
+println("This program will ask for two numbers (doubles) and an operation.");
+println("It will then perform that operation on the two numbers. Please");
+println("enter two numbers (doubles) separated by an operation (+, -, *, /).");
+println("For example, '3.6*4.5'");
+print(">> ");
+input = System.console().readLine();	//	receive user input
+
+if (input.indexOf("+") > 0) {	//	check for addition operator
+
+	idx = input.indexOf("+");
+	
+	x = Double.parseDouble(input.substring(0,idx));	//	first number
+	y = Double.parseDouble(input.substring(idx+1,input.length()));	//	second number
+	op = input.substring(idx,idx+1);
+
+	println("Addition");
+	z = x + y;
+	println("The result of " + x + " plus " + y + " is " + z);	//	 result
+	
+} else if (input.indexOf("-") > 0) {	//	check for subtraction operator
+
+	idx = input.indexOf("-");
+
+	x = Double.parseDouble(input.substring(0,idx));	//	first number
+	y = Double.parseDouble(input.substring(idx+1,input.length()));	//	second number
+	op = input.substring(idx,idx+1);
+	
+	println("Subtraction");
+	z = x - y;
+	println("The result of " + x + " minus " + y + " is " + z);
+
+} else if (input.indexOf("*") > 0) {	//	check for multiplication operator
+
+	idx = input.indexOf("*");
+	
+	x = Double.parseDouble(input.substring(0,idx));	//	first number
+	y = Double.parseDouble(input.substring(idx+1,input.length()));	//	second number
+	op = input.substring(idx,idx+1);
+	
+	println("Multiplication");
+	z = x * y;
+	println("The result of " + x + " times " + y + " is " + z);
+
+} else if (input.indexOf("/") > 0) {	//	check for division operator
+
+	idx = input.indexOf("/");
+
+	x = Double.parseDouble(input.substring(0,idx));	//	first number
+	y = Double.parseDouble(input.substring(idx+1,input.length()));	//	second number
+	op = input.substring(idx,idx+1);
+
+	println("Division");
+	z = (y==0) ? 0.0 : x / y;
+	println("The result of " + x + " divided by " + y + " is " + z);
+	
+} else {
+
+	println("Invalid operation string");	//	invalid input
+
+}
+
+println();
+println("End of Program");

@@ -1,0 +1,45 @@
+// Day 3 - Exercise 5
+// Count a chosen letter in the input string.
+
+// variables
+
+String str;
+char countToken;
+int len, i = 0, count = 0;
+boolean b = true;
+
+// Intro and user input request
+
+println("***\tDay 3, Exercise 5 \t\t***");
+println("***\tCOUNTING LETTERS	\t***");
+println();
+println("This program will read in a string and then count");
+println("the number of occurrences of a given letter. Please");
+println("enter a string and a letter to search for at the prompts");
+println("below.");
+print(">> ");
+str = System.console().readLine();	// receive user input string
+print(">> Letter: ");
+countToken = System.console().readLine().charAt(0);	// get letter to search for
+
+// count occurrences
+
+for (i = 0 ; i < str.length() ; i++) {	//	loop through string
+
+	char c = str.charAt(i);
+	
+	if (c == countToken) {	// does letter equal the search term?
+	
+		count++;	// if yes, increment
+	
+	}
+
+}
+
+// display results
+
+print("There are " + count + " " + countToken + "'s in");
+println("\"" + str + "\"");
+
+println();
+println("End of Program");

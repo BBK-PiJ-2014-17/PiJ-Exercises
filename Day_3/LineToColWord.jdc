@@ -1,0 +1,45 @@
+// Day 3 - Exercise 4
+// // Read input string and write as column of words
+
+// variables
+ 
+String str;
+int len, i = 0, idx;
+boolean b = true;
+
+// Intro and user input request
+
+println("***\tDay 3, Exercise 4 \t\t***");
+println("***\tLINE TO COLUMN	\t\t***");
+println();
+println("This program will read in a sentence and then display");
+println("the sentence as a column of words. Please enter a");
+println("sentence at the prompt below.");
+print(">> ");
+str = System.console().readLine();	//	receive user input
+
+len = str.length(); //	get text length
+
+// main loop
+
+while (b) {
+	
+	idx = str.indexOf(" "); // find space character
+	
+	if (idx == -1) {	// if no space, print remainder of input
+		println(str);
+		b = false;	//	break loop
+		break;
+	} else {
+	
+		println(str.substring(0, idx));
+	
+	}
+	
+	str = str.substring(idx + 1, str.length()); // modify string to remove words
+												// printed so far.
+	
+}
+
+println();
+println("End of Program");

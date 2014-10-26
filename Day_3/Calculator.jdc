@@ -1,0 +1,64 @@
+// Day 3 - Exercise 1
+// Calculator
+
+// variables
+
+double x, y, z;
+String str;
+
+// Intro and user input request
+
+println("***\tDay 3, Exercise 1 \t\t***");
+println("***\tCALCULATOR	\t\t***");
+println();
+println("This program will ask for two numbers (doubles) and an operation.");
+println("It will then perform that operation on the two numbers.");
+println("Please enter two numbers (doubles) on which to perform a");
+println("selected operation.");
+println();
+print(">> 1: ");
+str = System.console().readLine();	// receive user input
+x = Double.parseDouble(str);
+
+print(">> 2: ");
+str = System.console().readLine();	// receive user input
+y = Double.parseDouble(str);
+
+// display operations option menu.
+
+println();
+println("-- Operations menu --");
+println("1: Addition.");
+println("2: Subtraction.");
+println("3: Multiplication.");
+println("4: Division.");
+println();
+println("Please choose your operation.");
+print(">> ");
+str = System.console().readLine();	//	 receive user input
+
+// switch based on input
+
+switch (str) {
+	case "1":	println("Addition");
+				z = x + y;
+				println("The result of " + x + " plus " + y + " is " + z);
+				break;
+	case "2":	println("Subtraction");
+				z = x - y;
+				println("The result of " + x + " minus " + y + " is " + z);
+				break;
+	case "3":	println("Multiplication");
+				z = x * y;
+				println("The result of " + x + " times " + y + " is " + z);
+				break;
+	case "4":	println("Division");
+				z = (y==0) ? 0.0 : x / y;
+				println("The result of " + x + " divided by " + y + " is " + z);
+				break;
+	default:	println("Non-valid selection");
+				break;
+}
+
+println();
+println("End of Program");
