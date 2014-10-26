@@ -1,0 +1,30 @@
+// Factorial
+
+String str;
+
+print("Enter number: ");
+str = System.console().readLine();
+println("Factorial: " + factorialIteration(Integer.parseInt(str)));
+
+int factorialIteration(int n) {
+
+	int count = 0;
+	
+	for (int i = 0 ; i < n ; i++) {
+	
+		println(i + " , " + n);
+		count += n * (n-1);
+		println(count);
+		n--;
+		
+	}
+
+	return count;
+	
+}
+
+int factorialRecursion(int n) {
+
+	return 0;
+	
+}

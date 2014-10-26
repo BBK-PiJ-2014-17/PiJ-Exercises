@@ -1,0 +1,77 @@
+// Recursive Code
+// Exercise 1a
+
+printNumbers(6);
+
+void printNumbers(int n) {
+	if (n <= 0) {
+		return;
+	}
+	println(n);
+	printNumbers(n-2);
+	printNumbers(n-3);
+	println(n);
+}
+
+// 	printNumbers(6)
+// 	6
+//		printNumbers(4)
+//		4
+//			printNumbers(2)
+//			2
+//				printNumbers(0)
+//			printNumbers(-1)
+//			2
+//		printNumbers(1)
+//		1
+//			printNumbers(-1)
+//			printNumbers(-2)
+//		1
+//		4
+//	printNumbers(3)
+//	3
+//		printNumbers(1)
+//		1
+//			printNumbers(-1)
+//			printNumbers(-2)
+//		1
+//		printNumbers(0)
+//	3
+//	6
+
+
+// Exercise 1d
+
+int mcCarthy91(int n) {
+	if (n > 100) {
+		return n - 10;
+	} else {
+		return mcCarthy91(mcCarthy91(n+11));
+	}
+}
+
+// 	mcCarthy91(50)
+//		mcCarthy91*
+//			mcCarthy91(61)
+//				mcCarthy91*
+//					mcCarthy91(72)
+//						mcCarthy91*
+//							mcCarthy91(83)
+//								mcCarthy91*
+//									mcCarthy91(94)
+//										mcCarthy91*
+//											mcCarthy91(105) >> 95
+//										mcCarthy91(95)
+//											mcCarthy91(106) >> 96
+//										mcCarthy91(96)
+//											mcCarthy91(107) >> 97
+//										mcCarthy91(97)
+//											mcCarthy91(108) >> 98
+//										mcCarthy91(98)
+//											mcCarthy91(109) >> 99
+//										mcCarthy91(99)
+//											mcCarthy91(110) >> 100
+//										mcCarthy91(100)
+//											mcCarthy91(111) >> 101
+//										mcCarthy91(101) >> 91
+
