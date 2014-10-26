@@ -1,0 +1,41 @@
+// Day 1 - Exercise 6
+// Divide two integers without using the modulus
+// or division operation
+
+// variables
+
+int i = 0, x, y, z;
+String str;
+
+// Intro and user input request
+
+println("***\tDay 1, Exercise 6 \t\t***");
+println("***\tDIVISION	\t\t***");
+println();
+println("This program will divide one positive integer by another");
+println("and output the result as a quotient and remainder. The division");
+println("and modulus operators cannot be used. Instead the control loop");
+println("'while' will be used. Please enter two numbers at the prompts");
+println("given below.");
+println();
+print(">> 1: ");
+str = System.console().readLine();	// receive user input 1
+x = Integer.parseInt(str);
+print(">> 2: ");
+str = System.console().readLine();	// receive user input 1
+y = Integer.parseInt(str);
+
+// subtract y from x until y is smaller and output quotient.
+
+z = x;	// save x in z
+
+while(z >= y) {
+
+    i++;
+    z -= y;
+
+}
+
+println(y + " goes " + i + " times into " + x + " remainder " + z);
+println();
+println("End of Program");

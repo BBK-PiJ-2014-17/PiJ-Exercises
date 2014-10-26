@@ -1,0 +1,36 @@
+// Day 1 - Exercise 5
+// Multiply two integers without using the multiplication
+// operator
+
+// variables
+
+int i = 0, x, y, z = 0;
+String str;
+
+// Intro and user input requests
+
+println("***\tDay 1, Exercise 5 \t\t***");
+println("***\tMULTIPLICATION	\t\t***");
+println();
+println("This program will multiply two positive integers");
+println("without using the multiplication operator. Instead");
+println("the control loop 'while' will be used. Please enter");
+println("two numbers at the prompts given below.");
+println();
+print(">> 1: ");
+str = System.console().readLine();	// receive user input 1
+x = Integer.parseInt(str);
+print(">> 2: ");
+str = System.console().readLine();	// receive user input 2
+y = Integer.parseInt(str);
+
+// loop x times and add y to itself.
+
+while (i < x) {
+    i++;
+    z += y;
+}
+
+println("The product of " + x + " and " + y + " is " + z);
+println();
+println("End of Program");

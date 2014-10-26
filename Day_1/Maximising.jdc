@@ -1,0 +1,38 @@
+// Day 1 - Exercise 8
+// Find the largest of a sequences of numbers
+
+// variables
+
+int i = 0, j = 0, max = 0;
+String str;
+
+println("***\tDay 1, Exercise 8 \t\t***");
+println("***\tMAXIMISING	\t\t***");
+println();
+println("This program will read in a sequence of numbers terminated");
+println("by a '-1', and then return the largest of the entered");
+println("numbers. Please enter the sequence of numbers at the prompts");
+println("below, and enter '-1' to end the input.");
+println();
+
+// main loop
+
+while (i != -1) {	// while input is not '-1', continue
+
+    j++;
+    
+    print(">> " + j + ": ");
+    str = System.console().readLine();	// receive user input
+    i = Integer.parseInt(str);
+    
+    max = (max < i) ? i : max;	//	if input is greater than current largest
+								// 	number, replace max with input.
+
+}
+
+// display result
+
+println();
+println("The largest number entered was: " + max);
+println();
+println("End of Program");

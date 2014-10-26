@@ -1,0 +1,8 @@
+Exercise 4	-	Primes.jdc
+Exercise 5	-	Multiplication.jdc
+Exercise 6	-	Division.jdc
+Exercise 7	-	Sorting.jdc
+Exercise 8	-	Maximising.jdc
+Exercise 9	-	Sequential.jdc
+Exercise 10	-	Sequential.jdc
+Exercise 11	-	Poker.jdc 		(INCOMPLETE)
