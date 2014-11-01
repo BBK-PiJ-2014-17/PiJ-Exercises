@@ -1,0 +1,55 @@
+// Day 5 - Exercise 4
+// Detect a palindrome!
+// Using Recursion
+
+// variables
+
+String str;
+int strLength, j;
+boolean palindrome = true;	// assume is palindrome, find contradiction.
+
+// Intro and user input request
+
+println("***\tDay 5, Exercise 4 \t\t***");
+println("***\tPALINDROME	\t\t***");
+println();
+println("This program will read in a string and test to see if");
+println("it is a palindrome, using recursion. Please enter a");
+println("string at the prompt below.");
+println();
+print(">> ");
+str = System.console().readLine();	// receive user input
+
+strLength = str.length();	// get string length
+j = strLength-1;	//	end index for string characters
+
+println(str + " is a palindrome : " + isPalindrome(str));
+
+boolean isPalindrome(String s) {
+
+	println(s);
+	println(s.length());
+	
+	if ( s.length() < 2 ) {
+	
+		println("String: " + s);
+		return true;
+	
+	} else {
+	
+		String substring;
+		substring = s.substring(1,s.length()-1);
+	
+		char first = s.charAt(0);
+		char last = s.charAt(s.length()-1);
+		
+		println("First: " + first);
+		println("Last: " + last);
+		
+		if (first == last && isPalindrome(substring))
+			return true;
+	
+	}
+	
+	return false;
+}

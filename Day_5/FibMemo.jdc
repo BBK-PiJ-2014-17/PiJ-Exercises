@@ -1,0 +1,53 @@
+String str;
+int n;
+boolean b = true;
+int[] fibResults;
+
+println("Enter number");
+print(">> ");
+str = System.console().readLine();
+n = Integer.parseInt(str);
+
+fibResults = new int[n];
+
+fibResults[0] = 1;
+fibResults[1] = 1;
+
+println(fibNum(0));
+
+while(b) {
+
+	if (n == 1 || n == 2) {
+		println(fibResults[n-1]);
+		b = false;
+	} else {
+
+		// check if fib results has already been calculated.
+		
+		if (fibResults[n-1] != 0) {
+			
+			println(n + " term already calc'd: " + fibResults[n-1]);
+			
+		} else {
+			
+			println("Calculate fib for " + n);
+			
+			result = fibonacciRecursion(n-1) + fibonacciRecursion(n-2);
+			fibResults[n-1] = result;
+
+		}
+		
+
+		
+		return result;
+
+}
+		
+for (int i : fibResults)
+	println(i);
+	
+int fibNum(int n) {
+
+	return fibResults[n];
+
+}

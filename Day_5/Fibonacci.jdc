@@ -1,0 +1,136 @@
+// Day 5 - Exercise 2.2b
+// Fibonacci
+
+// variables
+
+String str;
+int[] fibResults; //	array to memoize the fib calcs
+
+// Intro and user input request
+
+println("***\tDay 5, Exercise 2.2b \t***");
+println("***\tFIBONACCI \t\t***");
+println();
+println("This program will print the Fibonacci sequence to a given number");
+println("either iteratively or recursively, depending on the choice made.");
+println("Please choose a command from below.");
+
+// command options
+
+println("Command List:");
+println("1.\t- Iteratively");
+println("2.\t- Recursively");
+println("3.\t- Recursively with memoization");
+println();
+print(">> ");
+str = System.console().readLine();	// receive user input for command
+
+// switch on input
+
+switch (str) {
+	case "1": 	println("Enter number");
+				print(">> ");
+				str = System.console().readLine();
+				println("Fibonacci using iteration.");
+				println(fibonacciIteration(Integer.parseInt(str)));
+				break;
+				
+	case "2": 	println("Enter number");
+				print(">> ");
+				str = System.console().readLine();
+				println("Fibonacci using recursion.");
+				println(fibonacciRecursion(Integer.parseInt(str)));
+				break;
+				
+	case "3": 	println("Enter number");
+				print(">> ");
+				str = System.console().readLine();
+				println("Fibonacci using recursion.");
+				fibResults = new int[Integer.parseInt(str)];	//	allocate for array
+				println(fibonacciRecursionMemo(Integer.parseInt(str), fibResults));
+				break;
+				
+	default:	println("Invalid selection");
+				break;
+}
+
+println();
+println("End of Program");
+
+// methods
+
+int fibonacciIteration(int n) {
+	
+	int prev1 = 1;
+	int prev2 = 1;
+	int sum = 0;
+	
+	if (n == 1 || n == 2) {
+		return 1;
+	} else {
+		
+		for (int i = 2 ; i < n ; i++) {
+		
+			sum = prev1 + prev2;
+			prev2 = prev1;
+			prev1 = sum;
+
+		}
+
+	}
+
+	return sum;
+	
+}
+
+int fibonacciRecursionMemo(int n, int[] a) {
+	
+	// prepare fib array
+	//int[] copy = 	
+		
+	int result;
+	
+	if (n == 1 || n == 2) {
+		return 1;
+	} else {
+
+		fibResults[0] = 1;
+		fibResults[1] = 1;
+		
+		println("Fib 1: " + fibResults[0]);
+		println("Fib 2: " + fibResults[1]);
+	
+		// check if fib results has already been calculated.
+		
+		if (fibResults[n-1] != 0) {
+			
+			println(n + " term already calc'd: " + fibResults[n-1]);
+		
+			result = fibResults[n-1];
+			
+		} else {
+			
+			println("Calculate fib for " + n);
+			
+			result = fibonacciRecursion(n-1) + fibonacciRecursion(n-2);
+			fibResults[n-1] = result;
+
+		}
+		
+		for (int i : fibResults)
+			println(i);
+		
+		return result;
+
+	}
+}
+
+int fibonacciRecursion(int n) {
+	
+	if (n == 1 || n == 2) {
+		return 1;
+	} else {
+		int result = fibonacciRecursion(n-1) + fibonacciRecursion(n-2);
+		return result;
+	}
+}

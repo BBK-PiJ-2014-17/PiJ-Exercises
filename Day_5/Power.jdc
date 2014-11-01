@@ -1,0 +1,99 @@
+// Day 5 - Exercise 5
+// Power function using recursion!
+
+// variables
+
+String str;
+int base, exponent;
+
+// Intro and user input request
+
+println("***\tDay 5, Exercise 5 \t\t***");
+println("***\tPOWER	\t\t\t***");
+println();
+println("This program will calculate the power of a base number");
+println("to an exponent, using recursion or iteration. Please");
+println("enter the base and exponent, and then choose a method");
+println("at the prompts below.");
+println();
+print("BASE >> ");
+str = System.console().readLine();	// receive user input for command
+base = Integer.parseInt(str);
+println();
+print("EXPONENT >> ");
+str = System.console().readLine();	// receive user input for command
+exponent = Integer.parseInt(str);
+println();
+
+// command options
+
+println("Command List:");
+println("1.\t- Iteratively");
+println("2.\t- Recursively");
+println();
+print(">> ");
+str = System.console().readLine();	// receive user input for command
+
+// create power object
+
+PowerObj p = new PowerObj(base, exponent);
+
+// switch on input
+
+switch (str) {
+	case "1": 	println("Power using iteration: " + p.powerByIteration(p.base, p.exponent));
+				break;
+				
+	case "2":	println("Power using recursion: " + p.powerByRecusion(p.base, p.exponent));
+				break;
+				
+	default:	println("Invalid selection");
+				break;
+}
+
+println();
+println("End of Program");
+
+// classes
+
+class PowerObj {
+
+	int base;
+	int exponent;
+	
+	PowerObj (int base, int exponent) {
+	
+		this.base = base;
+		this.exponent = exponent;
+
+	}
+	
+	static public int powerByRecusion(int b, int e) {
+	
+		println("Recursion");
+		
+		if ( e == 0 ) {
+			return 1;
+		} else {
+			return b * powerByRecusion(b, e-1);
+		}
+		
+	}
+	
+	static public int powerByIteration(int b, int e) {
+	
+		println("Iteration");
+		
+		int count = b;
+		
+		for(int i = 1 ; i < e ; i++) {
+			
+			count = count * b;
+		
+		}
+		
+		return count;
+	
+	}
+
+}

@@ -1,2 +1,6 @@
 Exercise 1	-	RecursiveCode.jdc
 Exercise 2a	-	Factorial.jdc
+Exercise 2b	-	Fibonacci.jdc		[INCOMPLETE]
+Exercise 2c	-	Hanoi2.jdc
+Exercise 4	-	Palindrome.jdc
+Exercise 5	-	Power.jdc
