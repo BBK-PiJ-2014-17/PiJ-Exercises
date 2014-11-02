@@ -1,0 +1,32 @@
+// Day 5 - Exercise 8
+// Measure size of stack in method calls
+
+// variables
+
+String str;
+
+// Intro and user input request
+
+println("***\tDay 5, Exercise 8 \t\t\t***");
+println("***\tHOW BIG IS YOUR STACK?	\t\t***");
+println();
+println("This program will call a method recusively until the stack overflows");
+println("Start the program by pressing any key.");
+println();
+print(">> ");
+str = System.console().readLine();	// receive user input
+
+try {
+
+	measureStack(1);
+	
+} catch(StackOverflowError e)  {
+	println("End of Stack");
+} finally {
+	
+}
+
+void measureStack(int count) {
+	println(count);
+	measureStack(count + 1);
+}
