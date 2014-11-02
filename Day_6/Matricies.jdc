@@ -1,0 +1,22 @@
+// Day 6 - Exercise 3
+// Create matricies using Matrix class
+
+// variables
+
+Matrix m;
+
+// Intro and user input request
+
+println("***\tDay 6, Exercise 3 \t\t***");
+println("***\tCREATING MATRICIES \t\t***");
+println();
+println("This program will create a matrix and then");
+println("allow commands to be run on the matrix.");
+println("Press any key to continue.");
+System.console().readLine();	// receive user input for command
+println();
+
+m = new Matrix(3,3);
+
+println("Matrix defined as:");
+m.prettyPrint();
