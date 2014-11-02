@@ -1,0 +1,67 @@
+// Day 6 - Exercise 1
+// Script to call Calculator class
+
+// variables
+
+String str;
+int x, y;
+
+// Intro and user input request
+
+println("***\tDay 6, Exercise 1 \t\t***");
+println("***\tDIVIDING INTEGERS \t\t***");
+println();
+println("This program will perform a chosen mathematical operation");
+println("on two given numbers by calling a class that contains the");
+println("methods to calculate said operations. Please enter two");
+println("numbers at the prompts below and then choose an operation.");
+println();
+print("X >> ");
+str = System.console().readLine();	// receive user input for command
+x = Integer.parseInt(str);
+println();
+print("Y >> ");
+str = System.console().readLine();	// receive user input for command
+y = Integer.parseInt(str);
+println();
+
+// command options
+
+println("Command List:");
+println("1.\t- Add");
+println("2.\t- Subtract");
+println("3.\t- Multiply");
+println("4.\t- Divide");
+println("5.\t- Modulus");
+println();
+print(">> ");
+str = System.console().readLine();	// receive user input for command
+
+// create calculator object
+
+Calculator c = new Calculator();
+
+// switch on input
+
+switch (str) {
+	case "1": 	println("Add " + x + " to " + y + " gives " + c.add(x,y));
+				break;
+				
+	case "2":	println("Subtract " + x + " from " + y + " gives " + c.subtract(x,y));
+				break;
+				
+	case "3": 	println("Multiply " + x + " by " + y + " gives " + c.multiply(x,y));
+				break;
+				
+	case "4":	println("Divide " + x + " by " + y + " gives " + c.divide(x,y));
+				break;
+				
+	case "5":	println("Modulus of " + x + " by " + y + " gives " + c.modulus(x,y));
+				break;
+				
+	default:	println("Invalid selection");
+				break;
+}
+
+println();
+println("End of Program");

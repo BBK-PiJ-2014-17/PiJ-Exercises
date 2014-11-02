@@ -1,0 +1,4 @@
+Exercise 1	-	DividingInts.jdc
+		-	Calculator.java
+Exercise 2	-	CopyArrays.jdc
+		-	ArrayCopier.java

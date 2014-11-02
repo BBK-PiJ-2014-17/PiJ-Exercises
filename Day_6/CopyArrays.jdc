@@ -1,0 +1,61 @@
+// Day 6 - Exercise 2
+// Copy arrays using ArrayCopier object
+
+// variables
+
+int[] src = new int[5];
+src[0] = 1;
+src[1] = 2;
+src[2] = 3;
+src[3] = 4;
+src[4] = 5;
+
+
+int[] dst = new int[7];
+dst[0] = 4;
+dst[1] = 5;
+dst[2] = 6;
+dst[3] = 7;
+dst[4] = 8;
+dst[5] = 6;
+dst[6] = 7;
+
+// Intro and user input request
+
+println("***\tDay 6, Exercise 2 \t\t***");
+println("***\tCOPYING ARRAYS \t\t\t***");
+println();
+println("This program will copy one integer array into a second");
+println("integer array, using a method of a class called ArrayCopier.");
+println("Press any key to continue.");
+System.console().readLine();	// receive user input for command
+println();
+
+println("Source Array");
+printArray(src);
+
+println("Target Array");
+printArray(dst);
+
+println("Perform Copy");
+println("............");
+
+ArrayCopier a = new ArrayCopier();
+
+a.copy(src, dst);
+
+println("New Target Array");
+printArray(dst);
+
+// methods
+
+void printArray(int[] a) {
+
+	for (int i : a) {
+		print(i);
+		print(", ");
+	}
+	
+	println();
+	
+}
