@@ -38,15 +38,67 @@ public class Matrix {
 
 	// methods
 	
-	public void setElement(int i, int j, int k) {
+	public void setMatrix(String s) {
 	
+		// finish!
+	
+	}
+	
+	public void setElement(int row, int col, int value) {
+		
+		// validate indexes
+		
+		if (row <= rows && col <= cols) {
+		
+			m[row][col] = value;
+		
+		} else {
+		
+			System.out.println("Invalid index");
+		
+		}
+		
+		prettyPrint();
+		
 	}
 	
 	public void setRow(int i, String s) {
 	
+		String[] splt = s.split(",");
+		
+		if (splt.length == cols) {
+		
+			for (int j = 0 ; j < cols ; j++) {
+				
+				m[i][j] = Integer.parseInt(splt[j]);
+				
+			}
+			
+		} else {
+		
+			System.out.println("Invalid input");
+			
+		}
+		
 	}
 	
 	public void setColumn(int i, String s) {
+	
+		String[] splt = s.split(",");
+				
+		if (splt.length == rows) {
+		
+			for (int j = 0 ; j < rows ; j++) {
+				
+				m[j][i] = Integer.parseInt(splt[j]);
+				
+			}
+			
+		} else {
+		
+			System.out.println("Invalid input");
+			
+		}
 	
 	}
 	
@@ -83,6 +135,8 @@ public class Matrix {
 			System.out.println();
 			
 		}
+		
+		System.out.println();
 	
 	}
 

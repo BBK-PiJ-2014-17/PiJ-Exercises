@@ -4,6 +4,9 @@
 // variables
 
 Matrix m;
+int rows, cols;
+boolean b = true;
+String str;
 
 // Intro and user input request
 
@@ -12,11 +15,107 @@ println("***\tCREATING MATRICIES \t\t***");
 println();
 println("This program will create a matrix and then");
 println("allow commands to be run on the matrix.");
-println("Press any key to continue.");
-System.console().readLine();	// receive user input for command
+println("Please use the following prompts to set the size");
+println("of the matrix");
+println();
+print("Rows: ");
+str = System.console().readLine();	// receive user input for command
+rows = Integer.parseInt(str);
+println();
+print("Columns: ");
+str = System.console().readLine();	// receive user input for command
+cols = Integer.parseInt(str);
 println();
 
-m = new Matrix(3,3);
+m = new Matrix(rows, cols);
 
-println("Matrix defined as:");
-m.prettyPrint();
+while (b) {
+	
+	String s = Integer.toString(displayCommands());
+	int x, y, z;
+	
+	switch (s) {
+		case "1": 	println("Set Element");
+					println();
+					print("Row: ");
+					str = System.console().readLine();	// receive user input for command
+					x = Integer.parseInt(str);
+					println();
+					print("Column: ");
+					str = System.console().readLine();	// receive user input for command
+					y = Integer.parseInt(str);
+					println();
+					print("Value: ");
+					str = System.console().readLine();	// receive user input for command
+					z = Integer.parseInt(str);
+					println();
+					
+					m.setElement(x-1, y-1, z);
+					
+					break;
+					
+		case "2": 	println("Set Row");
+					println();
+					print("Row: ");
+					str = System.console().readLine();	// receive user input for command
+					x = Integer.parseInt(str);
+					println();
+					print("Values: ");
+					str = System.console().readLine();	// receive user input for command
+					println();
+					
+					m.setRow(x - 1, str);
+					
+					break;
+					
+		case "3": 	println("Set Column");
+					println();
+					print("Column: ");
+					str = System.console().readLine();	// receive user input for command
+					x = Integer.parseInt(str);
+					println();
+					print("Values: ");
+					str = System.console().readLine();	// receive user input for command
+					println();
+					
+					m.setColumn(x - 1, str);
+					break;
+					
+		case "4": 	println("Display Matrix");
+					m.prettyPrint();
+					break;
+					
+		case "5": 	println("Exit");
+					b = false;
+					break;
+					
+		default:	println("Invalid selection");
+					break;
+	}
+		
+}
+
+println();
+println("End of Program");
+
+// methods
+
+int displayCommands() {
+
+	String str;
+	
+	println("Command List:");
+	println("1.\t- Set Element");
+	println("2.\t- Set Row");
+	println("3.\t- Set Column");
+	println("4.\t- Display Matrix");
+	println("5.\t- Exit");
+
+	println();
+	print(">> ");
+	str = System.console().readLine();	// receive user input for command
+
+	return Integer.parseInt(str);
+	
+}
+
