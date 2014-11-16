@@ -1,0 +1,11 @@
+println("Hello");
+
+for (ListType t : ListType.values()) {
+    println(t);
+}
+
+ListType lt = ListType.DOUBLE;
+
+if (lt == ListType.DOUBLE) {
+	println("Yay");
+}
