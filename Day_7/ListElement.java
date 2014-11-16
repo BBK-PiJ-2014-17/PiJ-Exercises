@@ -44,8 +44,45 @@ public class ListElement {
 
     }
 
-    public void deleteListElement() {
+    public void addListElement(ListElement e, ListElement s) {    //  for circular lists
 
+        if (this.getNextElement() == s) {
+            this.setNextElement(e);
+        } else {
+            this.getNextElement().addListElement(e, s);
+        }
+
+    }
+
+    public boolean deleteListElement(int i) {
+
+        if (this.getNextElement() == null) {
+            System.out.println("Element not found");
+            return false;
+        } else if (this.getNextElement().getElementID() == i) {
+            System.out.println("Deleting element " + this.getNextElement().getElementID());
+            this.setNextElement(this.getNextElement().getNextElement());
+            elementCount--;
+            return true;
+        } else {
+            return this.getNextElement().deleteListElement(i);  // recursive loop through all elements
+        }
+
+    }
+
+    public boolean deleteListElement(int i, ListElement e) {    //  for circular lists
+
+        if (this.getNextElement() == e) {
+            System.out.println("Element not found");
+            return false;
+        } else if (this.getNextElement().getElementID() == i) {
+            System.out.println("Deleting element " + this.getNextElement().getElementID());
+            this.setNextElement(this.getNextElement().getNextElement());
+            elementCount--;
+            return true;
+        } else {
+            return this.getNextElement().deleteListElement(i, e);  // recursive loop through all elements
+        }
 
     }
 

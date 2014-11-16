@@ -1,0 +1,9 @@
+Exercise 1	-	Spy.java
+Exercise 2	-	StudentMarks.java
+Exercise 3	-	LinkedList.java
+		-	ListElement.java
+Exercise 4	-	LinkedLIst.java
+Exercise 5	-	DoubleLinkList.java
+		-	DoubleListElement.java
+Exercise 6	-	CircularList.java
+		-	ListElement.java

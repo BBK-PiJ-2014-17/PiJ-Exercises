@@ -26,8 +26,6 @@ public class LinkedList {
 
     private void start() {
 
-        System.out.println("Element ID: " + listStart.getElementID());
-
         listStart.addListElement(new ListElement(22));
         listStart.addListElement(new ListElement(12));
         listStart.addListElement(new ListElement(1));
@@ -41,6 +39,15 @@ public class LinkedList {
 
         printList();
 
+        listStart.deleteListElement(85);
+        listStart.deleteListElement(1);
+
+        printList();
+
+        System.out.println("List Count recursively:\t\t" + getListLengthRecursively(listStart));
+        System.out.println("List Count iteratively:\t\t" + getListLengthIteratively());
+        System.out.println("List Count from class variable:\t" + listStart.getElementCount());
+
     }
 
     private void printList() {
@@ -51,14 +58,49 @@ public class LinkedList {
 
     }
 
-    private String printListElement(ListElement e) {
+    private void printListElement(ListElement e) {
+
+        System.out.println("Element: " + e.getElementID());
 
         if (e.getNextElement() == null) {
-            return "Element: " + e.getElementID();
+            //pass
         } else {
-            System.out.println(printListElement(e.getNextElement()));
-            return "Element: " + e.getElementID();
+            printListElement(e.getNextElement());
         }
+
+    }
+
+    // list lengths (Ex 4)
+
+    private int getListLengthRecursively(ListElement e) {
+
+        int count = 0;
+
+        if (e.getNextElement() == null) {
+            count = 1;
+        } else {
+            count++;
+            count += getListLengthRecursively(e.getNextElement());
+        }
+
+        return count;
+
+    }
+
+    private int getListLengthIteratively() {
+
+        int count = 1;
+
+        ListElement current = listStart;
+
+        while (current.getNextElement() != null) {
+
+            count++;
+            current = current.getNextElement();
+
+        }
+
+        return count;
 
     }
 
