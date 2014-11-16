@@ -31,6 +31,7 @@ public class List {
             listStart = item;
         } else {
             listStart.addListItem(item, listStart);
+            listFinish = item;
         }
 
         if (type == ListType.SINGLE_CIRC || type == ListType.DOUBLE_CIRC)
@@ -41,19 +42,23 @@ public class List {
     public void removeItem(int item) {
 
         if (listStart.getIdentifier() == item) {
+            ListItem tmp = listStart;
             listStart = listStart.getNextElement();
+            listStart.setPrevElement(tmp.getPrevElement());
+            listFinish.setNextElement(listStart);
         } else {
             listStart.deleteListItem(item, listStart);
         }
 
     }
 
-    private void completeCircle(ListItem e) {
+    private void completeCircle(ListItem item) {
 
-        if (e.getNextElement() == null) {
-            e.setNextElement(listStart);
+        if (item.getNextElement() == null) {
+            item.setNextElement(listStart);
+            listStart.setPrevElement(item);
         } else {
-            completeCircle(e.getNextElement());
+            completeCircle(item.getNextElement());
         }
 
     }
@@ -69,9 +74,11 @@ public class List {
         int k = (start.getPrevElement() == null) ? -1 : start.getPrevElement().getIdentifier();
 
         System.out.println("Element: " + i + " has next: " + j + " and prev: " + k);
-        //System.out.println("Element: " + i + " has next: " + j);
 
-        if (start.getNextElement() == null) {
+        ListType lt = this.type;
+        ListItem tmp = (lt == ListType.SINGLE_CIRC || lt == ListType.DOUBLE_CIRC) ? listStart : null;
+
+        if (start.getNextElement() == tmp) {
             //pass
         } else {
             printList(start.getNextElement());

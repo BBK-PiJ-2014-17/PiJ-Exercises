@@ -88,7 +88,6 @@ public class ListItem {
             System.out.println("Element not found");
             return false;
         } else if (this.nextElement.identifier == identifier) {
-            System.out.println("Deleting element " + this.nextElement.identifier);
             this.setNextElement(this.nextElement.nextElement);
             if (lt == ListType.DOUBLE || lt == ListType.DOUBLE_CIRC)
                 this.nextElement.setPrevElement(this);
