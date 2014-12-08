@@ -1,76 +1,104 @@
-public class GenericDoubleLinkList {
+public class GenericDoubleLinkList<T> {
 
     // variables
 
-    private GenericDoubleLinkNode listStart = null;
-    private GenericDoubleLinkNode listFinish = null;
+    private Node listStart = null;
+    private Node listFinish = null;
 
     // constructor
 
     public GenericDoubleLinkList() {
 
-        // add first element
+        // create head of list
 
-        GenericDoubleLinkNode firstNode = new GenericDoubleLinkNode();
+        Node firstNode = new Node("HEAD");
         listStart = firstNode;
         listFinish = firstNode;
 
     }
 
-    // main method
+    public void add(Node<T> n) {
 
-    public static void main(String[] args) {
+        Node<T> current = listStart;
 
-        GenericDoubleLinkList l = new GenericDoubleLinkList();    //  create object
-        l.start();  // start
+        while (current.getNextNode() != null) {
+            current = current.getNextNode();
+        }
 
-    }
-
-    private void start() {
-
-		
+        current.setNextNode(n);
 
     }
 
-    private void addNode(GenericDoubleLinkNode node) {
+    public boolean remove(Node<T> n) {
 
-        listStart.addListNode(node);
-        listFinish = node;
+        Node<T> current = listStart;
 
-    }
+        while (!current.getNextNode().equals(n)) {
+            current = current.getNextNode();
+        }
 
-    private void printListForwards(GenericDoubleLinkNode e) {
-
-	
-		/*
-        int i = e.getElementID();
-        int j = (e.getNextElement() == null) ? -1 : e.getNextElement().getElementID();
-        int k = (e.getLastElement() == null) ? -1 : e.getLastElement().getElementID();
-
-        System.out.println("Element: " + i + " has next: " + j + " and last: " + k);
-
-        if (e.getNextElement() == null) {
-            //pass
+        if (current != null) {
+            current.getPrevNode().setNextNode(current.getNextNode());
+            current.getNextNode().setPrevNode(current.getPrevNode());
+            return true;
         } else {
-            printListForwards(e.getNextElement());
-        } */
+            System.out.println("Node not found");
+            return false;
+        }
 
     }
 
-    private void printListBackwards(GenericDoubleLinkNode e) {
+    public String toString() {
 
-		/*
-        int i = e.getElementID();
-        int j = (e.getNextElement() == null) ? -1 : e.getNextElement().getElementID();
-        int k = (e.getLastElement() == null) ? -1 : e.getLastElement().getElementID();
+        StringBuilder sb = new StringBuilder();
 
-        System.out.println("Element: " + i + " has next: " + j + " and last: " + k);
+        return sb.toString();
 
-        if (e.getLastElement() == null) {
-            //pass
-        } else {
-            printListBackwards(e.getLastElement());
-        } */
+    }
+
+    // node inner class
+
+    private class Node<T> {
+
+        // variables
+
+        private T content;
+        private Node<T> nextNode;
+        private Node<T> prevNode;
+
+        // getters and setters
+
+        public T getContent() {
+            return this.content;
+        }
+
+        public void setNextNode(Node<T> n) {
+            nextNode = n;
+        }
+
+        public Node<T> getNextNode() {
+            return nextNode;
+        }
+
+        public void setPrevNode(Node<T> n) {
+            prevNode = n;
+        }
+
+        public Node getPrevNode() {
+            return prevNode;
+        }
+
+        // constructors
+
+        public Node(T content) {
+            this(content, null, null);
+        }
+
+        public Node(T content, Node<T> nextNode, Node<T> prevNode) {
+            this.content = content;
+            this.nextNode = nextNode;
+            this.prevNode = prevNode;
+        }
 
     }
 
