@@ -19,4 +19,11 @@ public interface User {
      */
     void setId(int id);
 
+    /**
+     * Register user with Library
+     * @param l as Library
+     * @return user ID of user at new Library
+     */
+    int register(Library l);
+
 }

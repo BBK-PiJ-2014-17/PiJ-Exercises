@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 public class UserTest {
 
     User u;
+    Library lib;
     String inputName;
     int inputId;
 
@@ -14,6 +15,7 @@ public class UserTest {
         inputId = 123;
 
         u = new UserImpl(inputName);
+        lib = new LibraryImpl("New Library");
 
     }
 
@@ -30,6 +32,14 @@ public class UserTest {
         u.setId(inputId);
         //assertEquals(122, u.getId());             // fail
         assertEquals(inputId, u.getId());           // pass
+    }
+
+    @Test
+    public void testUserRegister() {
+
+        //assertEquals(5, u.register(lib));         // fail
+        assertEquals(1, u.register(lib));           // pass
+
     }
 
 }
